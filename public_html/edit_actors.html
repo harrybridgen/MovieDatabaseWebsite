@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Actors</title>
+    <script type="text/javascript" src="JS/search.js"></script>
+    <script type="text/javascript" src="JS/popupForm.js"></script>
+    <script type="text/javascript" src="JS/toggle_form.js"></script>
+    <link rel='stylesheet' type='text/css' href='CSS/style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"/>
+    <link rel="icon" href="images/icon/icon.png">
+</head>
+<body>
+<div class="container">
+        <ul>
+            <li><a href="movies.html"><span class="fas fa-film"></span> Movies </a></li>
+            <li><a href="actors.html"><span class="fas fa-user"></span> Actors</a></li>
+            <li><a href="edit_movies.html"><span class="fas fa-plus"></span> Edit Movies</a></li>
+            <li><a class="active" href="edit_actors.html"><span class="fas fa-plus"></span> Edit Actors</a></li>
+        </ul>
+</div>
+<br>
+<div class="container">
+    <header>
+        <h1>Edit Actors</h1>
+    </header>
+    <div class="button-container">
+        <button id="add-button" class="edit-button">Add Actor</button>
+        <button id="remove-button" class="edit-button">Remove Actor</button>
+    </div>
+
+    <div id="add-form" class="actor-form" style="display: none;">
+        <form id="add-actor-form" onsubmit="submitFormPopup(event, 'form-response', 'PHP/add_actor.php')">
+
+            <label for="actor-name">Actor Name</label>
+            <input type="text" name="actor-name" id="actorName" required>
+
+            <input type="submit" name="submit" value="Add Actor">
+        </form>
+    </div>
+
+    <div id="remove-form" class="actor-form" style="display: none;">
+        <form id="remove-actor-form" onsubmit="submitFormPopup(event, 'form-response', 'PHP/remove_actor.php')">
+
+            <label for="actorName">Actor Name</label>
+            <div class="suggestions-container">
+                <input type="text" name="actor-name" id="suggestions-input-actor" onkeyup="search(this.value,'suggestions-input-actor', 'suggestions-div-actor', 'Actor', 'actorName')", onblur="hideSuggestions('suggestions-div-actor')" required>
+                <div name="suggestions-div" id="suggestions-div-actor"></div>
+            </div>
+
+            <input type="submit" name="submit" value="Remove Actor">
+        </form>
+    </div>
+</div>
+<div id="form-response" class="form-response">
+    <div class="response-message"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Sensitive config
+config.php
+
+# IDE settings
+.vscode/
+.idea/
+
+# System junk
+.DS_Store
+Thumbs.db
+
+# Backup/temporary files
+*.log
+*.bak
+*.swp
+
+# Uploaded images (optional: include if demo needs them)
+images/movies/
+images/actors/

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+    <script type="text/javascript" src="JS/search.js"></script>
+    <script type="text/javascript" src="JS/popupForm.js"></script>
+    <link rel='stylesheet' type='text/css' href='CSS/style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"/>
+    <link rel="icon" href="images/icon/icon.png">
+</head>
+<body>
+<div class="container">
+    <ul>
+        <li><a class="active" href="movies.html"><span class="fas fa-film"></span> Movies </a></li>
+        <li><a href="actors.html"><span class="fas fa-user"></span> Actors</a></li>
+        <li><a href="edit_movies.html"><span class="fas fa-plus"></span> Edit Movies</a></li>
+        <li><a href="edit_actors.html"><span class="fas fa-plus"></span> Edit Actors</a></li>
+    </ul>
+</div>
+<br>
+<div class="container">
+    <header>
+        <h1>Search for a Movie</h1>
+    </header>
+
+    <section>
+        <form onsubmit="submitForm(event, 'suggestions-input', 'search-results', 'display_movie')" action="">
+            <label for="input">Movie title</label>
+            <br>
+            <div class="suggestions-container">
+                <input type="text" name="movie-name" id="suggestions-input"
+                 onkeyup="search(this.value,'suggestions-input', 'suggestions-div', 'Movie', 'movieName')", 
+                 onblur="hideSuggestions('suggestions-div')" required>
+                <div name="suggestions-div" id="suggestions-div"></div>
+            </div>
+            <br>
+            <input type="submit" value="Search">
+        </form>
+    </section>
+
+    <section id="search-results"></section>
+</div>
+<div id="form-response" class="form-response">
+    <div class="response-message"></div>
+</div>
+</body>
+</html>
