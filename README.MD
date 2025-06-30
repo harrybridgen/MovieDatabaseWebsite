@@ -23,17 +23,3 @@ A simple web application that allows users to search, add, and remove movies and
 -   AJAX (for dynamic content)
 -   Font Awesome (icons)
 
-## How to Run
-
-1. Set up a local PHP + MySQL environment (e.g. XAMPP).
-2. Import the provided database schema (not included here).
-3. Create a `config.php` file in the project root with the following:
-
-```php
-<?php
-$db_host = 'localhost';
-$db_user = 'root';
-$db_pass = '';
-$db_name = 'your_db_name';
-?>
-```
